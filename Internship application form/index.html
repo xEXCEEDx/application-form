@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("3wCPi-IySJGAoBRfa");
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header> Internship application form</header>
+        <div class="form">
+          <div class="input-box">
+            <label for="position">Internship position</label>
+            <input type="text"  id="position" placeholder="Enter Internship position" required>
+          </div>
+          <div class="input-box">
+            <label>Name</label>
+            <input
+              type="text"
+              class="input-box"
+              id="name"
+              placeholder="Enter name"
+            />
+           <div class="column">
+            <div class="input-box">
+                <label>Age</label>
+                <input type="text" id="Age" placeholder="Enter Age" required />
+            </div>
+            <div class="input-box">
+              <label>Phone Number</label>
+              <input type="text" id="Phone" placeholder="Enter phone number" required />
+            </div>
+
+          </div>
+          </div>
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="input-box"
+              id="email"
+              placeholder="Enter email"
+            />
+            <div class="column">
+              <div class = input-box>
+                <label for="start">Start Date of Internship</label>
+                <input type="date" name="date" id="startdate" min="2019-06-10">
+                </div>
+                <div class = input-box>
+                <label for="End">End Date of Internship</label>
+                <input type="date" name="date" id="Enddate" min="2019-06-10">
+               </div>
+             </div>
+             <div class="form">
+              <form method="POST" action="upload.php" enctype="multipart/form-data">
+                <div class="column">
+                <input type="file" name="file" accept=".txt, .pdf">
+            </form>
+           </div>
+                </div>
+          </div>
+          <br>
+          <div class="input-box">
+          </div>
+          <button class="btn btn-primary" onclick="sendMail()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
